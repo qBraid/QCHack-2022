@@ -73,6 +73,6 @@ parser may still have a long and full life. However, if the additional challenge
 
 ## Judging
 
-The test directory will *not* be used to grade your submission. Well-implemented programs should be able to interface with other qasm parsers to a certain degree, although full-coverage is not expected. However, competitive submissions will demonstrate unitary equivalance up to a global phase for input-output programs over most common / standard gate sets, and implement backstops / error handling to ensure program completion when exceptions do arise.
+A seperate auto-grader, similar but not equivalent to the test directory, will be used to grade your submission. Well-implemented programs should be able to interface with other qasm parsers to a certain degree, although full-coverage is not expected. However, competitive submissions will demonstrate unitary equivalance up to a global phase for input-output programs over most common / standard gate sets, and implement backstops / error handling to ensure program completion when exceptions do arise.
 
 Submission instructions will be posted on the \#qbraid Discord channel. In the meantime, feel free to reach out in the chat with any questions or clarifications. Good luck!
