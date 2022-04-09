@@ -1,15 +1,16 @@
-# OpeQasm Parser Challenge
-
-In this challenge, your task to implement components of an OpenQASM quantum circuit parser!
+# OpeQASM Parser Challenge
 
 <a href="https://qbraid.com/">
-    <img src="/docs/_static/logo.png"
+    <img src="_static/logo.png"
          alt="qbraid logo"
          width="250px"
          align="right">
 </a>
 
+Welcome to QCHack qBraid <> Braket OpenQASM challenge!
+
 ## Background
+
 
 The Open Quantum Assembly Language (OpenQASM) is an imperative programming language designed for near-term quantum computing algorithms and applications. Its main goal is to serve as an intermediate representation for higher-level compilers to communicate with quantum hardware.
 
@@ -34,7 +35,7 @@ def circuit_to_qasm(circuit: Circuit) -> str:
     """
 
     return NotImplemented
-``` 
+```
 
 ## Toy example
 
@@ -67,7 +68,7 @@ cx q[1],q[2];
 Given the time constrains of the hackathon, don't worry about processing [result types](https://github.com/aws/amazon-braket-sdk-python/blob/0d28a8fa89263daf5d88bc706e79200d8dc091a8/src/braket/circuits/result_types.py) or [noise](https://github.com/aws/amazon-braket-sdk-python/blob/0d28a8fa89263daf5d88bc706e79200d8dc091a8/src/braket/circuits/noise.py).Instead, you can focus gate-based operators and instructions.
 
 Additionally, we encourage participants to implement solutions using OpenQASM 2.0 for ease of testing and compatibility with other frontend quantum modules. OpenQASM 3 is backwards compatible with OpenQASM 2.0, so your
-parser may still have a long and full life. However, if the additional challenge sounds enticing, these [qiskit docs](https://qiskit.github.io/openqasm/index.html) are a good place to start. In the `test` directory, we've included a couple unit-tests that interface with the `cirq` and `qiskit` qasm converters to help get you started. 
+parser may still have a long and full life. However, if the additional challenge sounds enticing, these [qiskit docs](https://qiskit.github.io/openqasm/index.html) are a good place to start. In the `test` directory, we've included a couple unit-tests that interface with the `cirq` and `qiskit` qasm converters to help get you started.
 
 ## Judging
 
