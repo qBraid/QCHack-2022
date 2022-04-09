@@ -14,6 +14,13 @@ April 9-10th 2022
 ## Using qBraid Challenge
 If you use our platform to solve the Amazon, IBM, Qutech, or Microsoft challenge you'll be automatically added to the "Using qBraid Challenge" :)
 
+
+## Submission
+- Fork (or duplicate) this repository to your qBraid account.
+- Work on qBraid Lab to solve a challenge!
+- Exactly one member of your team should submit the URL/link to your team’s forked repository via the QCHack 2022 Challenge Submission Form (https://forms.gle/rBW6tDC8hjW35Lc76). 
+- We'll merge your fork to showcase your work on the qBraid GitHub! wooo!
+
 ## qBraid/Braket Tutorials
 
 Here, we provide useful tutorials on how to use qBraid-Lab, along with tutorials
