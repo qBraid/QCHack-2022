@@ -23,20 +23,6 @@ Then, using the integrated Braket-OpenQasm module, the participants must
 construct the equivalent Braket circuit, execute the program on a QPU backend,
 and interpret the results.
 
-**Open-ended Algorithmic Challenges**:
-
-In this challenge, participants will implement a matrix to Braket circuit
-converter. The first tier of the challenge will be to construct a Braket circuit
-from a given matrix using any Braket-supported gates. The second tier will
-require their participants to map the matrix to a Braket circuit composed only
-of supported operations of particular backends, e.g. Rigetti QPU’s, OQC Lucy,
-etc. The third tier will be to optimize their implementation over the circuit
-depth and additional recommendations of the individual QPU’s. For this tier, the
-participants will have the option to integrate with third-party compilers. The
-final tier of this challenge will ask the participants to compare the previous
-three tiers of optimization through noisy simulation and other relevant
-benchmarking procedures.
-
 **Implementation requirements**:
 
 - Must include a problem description and instructions on running the project in
