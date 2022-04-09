@@ -1,6 +1,9 @@
 # QCHack 2022
 Please clone this repository into your qBraid Lab environment to get the most out of the challenges! If you need help please just reach out to a mentor.
 
+
+**You don't have to do all the challenges! Just pick one (OpenQasm, Grover, Quantum teleportation) or do one Amazon, IBM, Qutech, or Microsoft's challenge on qBraid to be added to the Using qBraid Challenge**
+
 https://www.quantumcoalition.io/
 
 April 9-10th 2022
