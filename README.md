@@ -11,6 +11,9 @@ April 9-10th 2022
 
 - [**Intro to QC Challenges**](intro_to_qc_challenges)
 
+## Using qBraid Challenge
+If you use our platform to solve the Amazon, IBM, Qutech, or Microsoft challenge you'll be automatically added to the "Using qBraid Challenge" :)
+
 ## qBraid/Braket Tutorials
 
 Here, we provide useful tutorials on how to use qBraid-Lab, along with tutorials
