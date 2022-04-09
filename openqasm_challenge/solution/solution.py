@@ -35,5 +35,19 @@ def circuit_to_qasm(circuit: Circuit) -> QASMType:
         cx q[1],q[2];
 
     """
+    result = ''
 
-    return NotImplemented
+    # add version to the result string
+    # add includes to the string
+
+    # add number of registers to the string 
+
+    for instruction in list(circuit.instructions):
+        result += str(instruction.operator) + ' '
+        
+        for operator in instruction.target:
+              result += str(operator) + ' '
+        
+        result += '\n'
+
+    return result
