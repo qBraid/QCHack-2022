@@ -1,13 +1,14 @@
-# OpeQASM Parser Challenge
+# qBraid OpenQASM Parser Challenge
 
 <a href="https://qbraid.com/">
     <img src="_static/logo.png"
          alt="qbraid logo"
-         width="250px"
+         width="210px"
          align="right">
 </a>
 
-Welcome to QCHack qBraid <> Braket OpenQASM challenge!
+Welcome to the [QCHack](https://www.quantumcoalition.io/) qBraid <> Braket OpenQASM challenge!
+
 
 ## Background
 
