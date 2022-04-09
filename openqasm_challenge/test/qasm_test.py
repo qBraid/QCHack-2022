@@ -54,7 +54,7 @@ test_data = [braket_ghz(), braket_fourteen()]
 
 
 @pytest.mark.parametrize("circuit,unitary_expected", test_data)
-def test_consistency_qasm_to_cirq(circuit, unitary_expected):
+def test_consistency_qasm_to_cirq_unitary(circuit, unitary_expected):
     """Test consistensy with cirq qasm parser"""
     qasm_str = circuit_to_qasm(circuit)
     unitary_test = qasm_to_unitary_cirq(qasm_str)
@@ -62,7 +62,7 @@ def test_consistency_qasm_to_cirq(circuit, unitary_expected):
 
 
 @pytest.mark.parametrize("circuit,unitary_expected", test_data)
-def test_consistency_qasm_to_qiskit(circuit, unitary_expected):
+def test_consistency_qasm_to_qiskit_unitary(circuit, unitary_expected):
     """Test consistensy with qiskit qasm parser"""
     qasm_str = circuit_to_qasm(circuit)
     unitary_test = qasm_to_unitary_qiskit(qasm_str)

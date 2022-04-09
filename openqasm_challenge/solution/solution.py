@@ -2,12 +2,11 @@ from braket.circuits import Circuit
 
 QASMType = str
 
-
 def circuit_to_qasm(circuit: Circuit) -> QASMType:
     """Converts a `braket.circuits.Circuit` to an OpenQASM string.
 
     Args:
-        circuit: braket Circuit object
+        circuit: Amazon Braket quantum circuit
 
     Returns:
         The OpenQASM string equivalent to the circuit
