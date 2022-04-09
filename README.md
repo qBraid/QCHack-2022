@@ -4,11 +4,11 @@ https://www.quantumcoalition.io/
 
 April 9-10th 2022
 
-# Technical Challenges
+## Technical Challenges
 
 - [**OpenQASM Parser Challenge**](openqasm_challenge/README.md)
 
-# qBraid/Braket Tutorials
+## qBraid/Braket Tutorials
 
 Here, we provide useful tutorials on how to use qBraid-Lab, along with tutorials
 on quantum computing, using Amazon Braket. The ladder were provided by the
