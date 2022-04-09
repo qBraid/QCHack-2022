@@ -4,6 +4,10 @@ https://www.quantumcoalition.io/
 
 April 9-10th 2022
 
+# Technical Challenges
+
+- [**OpenQASM Parser Challenge**](openqasm_challenge/README.md)
+
 # qBraid/Braket Tutorials
 
 Here, we provide useful tutorials on how to use qBraid-Lab, along with tutorials
