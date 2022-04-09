@@ -1,4 +1,5 @@
 # QCHack 2022
+Please clone this repository into your qBraid Lab environment to get the most out of the challenges! If you need help please just reach out to a mentor.
 
 https://www.quantumcoalition.io/
 
