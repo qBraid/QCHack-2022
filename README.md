@@ -8,7 +8,7 @@ April 9-10th 2022
 
 - [**OpenQASM Parser Challenge**](openqasm_challenge/README.md)
 
-- [**Intro to QC Challenges**](intro_to_qc_challenges/README.md)
+- [**Intro to QC Challenges**](intro_to_qc_challenges)
 
 ## qBraid/Braket Tutorials
 
