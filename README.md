@@ -4,41 +4,6 @@ https://www.quantumcoalition.io/
 
 April 9-10th 2022
 
-## Technical challenge
-
-**Introduction to Quantum Computing Challenges**:
-
-Jupyter notebooks that walk the participants through fundamental quantum
-computing concepts and algorithms e.g. Quantum Teleportation, Grover’s search,
-Shors, Deutch-Jozsa. Each fundamental algorithm will have its own tutorial and
-associated challenge, and be presented in increasing level of difficulty.
-
-You may submit solutions for multiple challenges if you wish, but we will only
-select one unique winner for each algorithm.
-
-**Logistical / Platform Specific Challenges**:
-
-The participant is given an OpenQasm file that implements the QAOA algorithm.
-Then, using the integrated Braket-OpenQasm module, the participants must
-construct the equivalent Braket circuit, execute the program on a QPU backend,
-and interpret the results.
-
-**Implementation requirements**:
-
-- Must include a problem description and instructions on running the project in
-  README.md file.
-- Must utilize quantum hardware available through AWS Braket
-
-**Bonus requirements**:
-
-- Incorporate noisy simulation through AWS Braket
-- Incorporate a hybrid quantum-classical task through AWS Braket
-
-**Device pricing and availability**:
-
-- [Amazon Braket pricing](https://aws.amazon.com/jp/braket/pricing/)
-- [Amazon Braket supported devices](https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html)
-
 # qBraid/Braket Tutorials
 
 Here, we provide useful tutorials on how to use qBraid-Lab, along with tutorials
