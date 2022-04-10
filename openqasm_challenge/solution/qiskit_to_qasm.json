@@ -1,0 +1,9 @@
+{
+   "gates_transpilation": {
+      "cnot":"CX",
+      "v":"sx",
+      "vi":"sxdg",
+      "si":"sdg",
+      "ti":"tdg"
+   }
+}
