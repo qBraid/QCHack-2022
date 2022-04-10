@@ -35,19 +35,49 @@ def circuit_to_qasm(circuit: Circuit) -> QASMType:
         cx q[1],q[2];
 
     """
-    result = ''
+    def ctl(circuit: Circuit) -> np.ndarray:
+        ops = []
+        for i in list(circuit.instructions):
+            subops = []
+            subops.append(i.operator)
+            for j in i.target:
+                subops.append(j)
+            ops.append(subops)
+        return(ops)
 
-    # add version to the result string
-    # add includes to the string
+    def outstring(a:np.ndarray) -> (string,int):
+        idx = 0
+        maxi = 0
+        while str(a[0])[idx] != '(':
+            idx += 1
 
-    # add number of registers to the string 
+        gate = str(a[0])[:idx].lower()
+        if gate == 'cnot':
+            outstr = 'CX'
+        else:
+            outstr = gate
 
-    for instruction in list(circuit.instructions):
-        result += str(instruction.operator) + ' '
+        try:
+            outstr += '('+str(a[0].angle)+') '
+        except:
+            outstr += ' '
         
-        for operator in instruction.target:
-              result += str(operator) + ' '
-        
-        result += '\n'
+        for z in range(1, len(a)):
+            outstr += 'q['+str(a[z])[6]+']'
+            if int(a[z]) > maxi:
+                maxi = int(a[z])
+            if z != len(a)-1:
+                outstr += ','
 
-    return result
+        outstr += ';'
+        return(outstr, maxi)
+    
+    output = ''
+    maxx = 0
+    for a in ctl(circuit):
+        output += (outstring(a)[0] + '\n')
+        if outstring(a)[1] > maxx:
+            maxx = outstring(a)[1]
+    output = 'OPENQASM 2.0;\ninclude "qelib1.inc";\n\nqreg q['+str(maxx+1)+'];\n\n' + output
+    
+    return output
