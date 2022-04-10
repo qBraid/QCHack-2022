@@ -51,8 +51,9 @@ def outstring(a:np.ndarray) -> (string,int):
             program containing only the instructions 
             without the headers and the number of quantum
             registers needed.
-    Example output:
-        \n\nh q[0];\nCX q[0],q[1];\nCX q[2],q[3];\nx q[3];\nh q[1];\ny q[4];\nsxdg q[5];\nswap q[4],q[5];\nz q[5];\nswap q[7],q[13];\n
+    Example:
+        input: [H('qubit_count': 1), Qubit(1)]
+        output: ('h q[1];', 1)
     """
     idx = 0
     maxi = 0
