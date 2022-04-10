@@ -1,80 +1,51 @@
-from braket.circuits import Circuit
-
+import json 
 QASMType = str
 
+def get_corresponding_gate(gate: str) -> str:
+    try:
+        json_file_path = 'qiskit_to_qasm.json'
+        with open(json_file_path, 'r') as j:
+             outstr = json.loads(j.read())['gates_transpilation'][gate]
+    except:
+        outstr = gate
+    
+    return outstr
+
+def ctl(circuit: Circuit) -> np.ndarray:
+    ops = []
+    for i in list(circuit.instructions):
+        subops = []
+        subops.append(i.operator)
+        for j in i.target:
+            subops.append(j)
+        ops.append(subops)
+    return(ops)
+
+def outstring(a:np.ndarray) -> (string,int):
+    idx = 0
+    maxi = 0
+    while str(a[0])[idx] != '(':
+        idx += 1
+
+    gate = str(a[0])[:idx].lower()
+    outstr = get_corresponding_gate(gate)
+
+    try:
+        outstr += '('+str(a[0].angle)+') '
+    except:
+        outstr += ' '
+
+    for z in range(1, len(a)):
+        outstr += 'q['+str(int(a[z]))+']'
+        if int(a[z]) > maxi:
+            maxi = int(a[z])
+        if z != len(a)-1:
+            outstr += ','
+
+    outstr += ';'
+    return(outstr, maxi)
+
 def circuit_to_qasm(circuit: Circuit) -> QASMType:
-    """Converts a `braket.circuits.Circuit` to an OpenQASM string.
-
-    Args:
-        circuit: Amazon Braket quantum circuit
-
-    Returns:
-        The OpenQASM string equivalent to the circuit
-
-    Example:
-        >>> from braket.circuits import Circuit
-        >>> circuit = Circuit().h(0).cnot(0,1).cnot(1,2)
-        >>> print(circuit)
-        T  : |0|1|2|
-
-        q0 : -H-C---
-                |
-        q1 : ---X-C-
-                  |
-        q2 : -----X-
-
-        T  : |0|1|2|
-        >>> print(circuit_to_qasm(circuit))
-        OPENQASM 2.0;
-        include "qelib1.inc";
-
-        qreg q[3];
-
-        h q[0];
-        cx q[0],q[1];
-        cx q[1],q[2];
-
-    """
-    def ctl(circuit: Circuit) -> np.ndarray:
-        ops = []
-        for i in list(circuit.instructions):
-            subops = []
-            subops.append(i.operator)
-            for j in i.target:
-                subops.append(j)
-            ops.append(subops)
-        return(ops)
-
-    def outstring(a:np.ndarray) -> (string,int):
-        idx = 0
-        maxi = 0
-        while str(a[0])[idx] != '(':
-            idx += 1
-
-        gate = str(a[0])[:idx].lower()
-        
-        try:
-            json_file_path = 'qiskit_to_qasm.json'
-            with open(json_file_path, 'r') as j:
-                 outstr = json.loads(j.read())['gates_transpilation'][gate]
-        except:
-            outstr = gate
-
-        try:
-            outstr += '('+str(a[0].angle)+') '
-        except:
-            outstr += ' '
-
-        for z in range(1, len(a)):
-            outstr += 'q['+str(int(a[z]))+']'
-            if int(a[z]) > maxi:
-                maxi = int(a[z])
-            if z != len(a)-1:
-                outstr += ','
-
-        outstr += ';'
-        return(outstr, maxi)
-
     output = ''
     maxx = 0
     for a in ctl(circuit):
