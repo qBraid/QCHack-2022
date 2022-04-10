@@ -54,6 +54,12 @@ def circuit_to_qasm(circuit: Circuit) -> QASMType:
         gate = str(a[0])[:idx].lower()
         if gate == 'cnot':
             outstr = 'CX'
+        elif gate == 'vi':
+            outstr = 'sxdg'
+        elif gate == 'v':
+            outstr = 'sx'
+        elif str(a[0])[idx-1].lower() == 'i':
+            outstr = str(a[0])[:idx-1].lower() + 'dg'
         else:
             outstr = gate
 
@@ -61,9 +67,9 @@ def circuit_to_qasm(circuit: Circuit) -> QASMType:
             outstr += '('+str(a[0].angle)+') '
         except:
             outstr += ' '
-        
+
         for z in range(1, len(a)):
-            outstr += 'q['+str(a[z])[6]+']'
+            outstr += 'q['+str(int(a[z]))+']'
             if int(a[z]) > maxi:
                 maxi = int(a[z])
             if z != len(a)-1:
@@ -71,7 +77,7 @@ def circuit_to_qasm(circuit: Circuit) -> QASMType:
 
         outstr += ';'
         return(outstr, maxi)
-    
+
     output = ''
     maxx = 0
     for a in ctl(circuit):
@@ -79,5 +85,5 @@ def circuit_to_qasm(circuit: Circuit) -> QASMType:
         if outstring(a)[1] > maxx:
             maxx = outstring(a)[1]
     output = 'OPENQASM 2.0;\ninclude "qelib1.inc";\n\nqreg q['+str(maxx+1)+'];\n\n' + output
-    
+
     return output
