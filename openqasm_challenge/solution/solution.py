@@ -52,15 +52,12 @@ def circuit_to_qasm(circuit: Circuit) -> QASMType:
             idx += 1
 
         gate = str(a[0])[:idx].lower()
-        if gate == 'cnot':
-            outstr = 'CX'
-        elif gate == 'vi':
-            outstr = 'sxdg'
-        elif gate == 'v':
-            outstr = 'sx'
-        elif str(a[0])[idx-1].lower() == 'i':
-            outstr = str(a[0])[:idx-1].lower() + 'dg'
-        else:
+        
+        try:
+            json_file_path = 'qiskit_to_qasm.json'
+            with open(json_file_path, 'r') as j:
+                 outstr = json.loads(j.read())['gates_transpilation'][gate]
+        except:
             outstr = gate
 
         try:
