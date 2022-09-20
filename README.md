@@ -1,6 +1,10 @@
 # QCHack 2022
 Please clone this repository into your qBraid Lab environment to get the most out of the challenges! If you need help please just reach out to a mentor.
 
+[<img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" width="150">](https://account.qbraid.com?gitHubUrl=https://github.com/qBraid/QCHack-2022.git)
+
+
+
 
 **You don't have to do all the challenges! Just pick one (OpenQasm, Grover, Quantum teleportation) or do one Amazon, IBM, Qutech, or Microsoft's challenge on qBraid to be added to the Using qBraid Challenge**
 
